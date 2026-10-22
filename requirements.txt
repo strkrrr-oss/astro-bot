@@ -1,4 +1,4 @@
 python-telegram-bot==22.8
-openai==3.36.0
 requests==2.34.2
 python-dotenv==1.2.4
+google-generativeai==0.3.0
