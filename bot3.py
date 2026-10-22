@@ -1,7 +1,6 @@
 import logging
 import os
 
-from google.genai.errors import ServerError
 from dotenv import load_dotenv
 from google import genai
 from telegram import Update
