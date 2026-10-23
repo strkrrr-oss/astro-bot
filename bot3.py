@@ -3,6 +3,7 @@ import os
 
 from dotenv import load_dotenv
 from google import genai
+from google.genai.errors import ServerError
 from telegram import Update
 from telegram.ext import (
     Application,
@@ -95,7 +96,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
     except ServerError as e:
-        logging.exception("Ошибка сервера Gemini")
+        logging.warning("Ошибка сервера Gemini: %s", e)
 
         if getattr(e, "code", None) == 503:
             await update.message.reply_text(
